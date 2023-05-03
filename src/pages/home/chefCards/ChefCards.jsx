@@ -8,7 +8,7 @@ const ChefCards = ({ category }) => {
 
     return (
         <Container>
-            <Row>
+            <Row lg={2}>
                 <Col lg={4} sm={12}>
                     <Card className="m-5" style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={picture} />

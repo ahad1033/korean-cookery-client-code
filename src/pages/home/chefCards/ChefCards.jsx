@@ -1,11 +1,10 @@
 import React from 'react';
 import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ChefCards = ({ category }) => {
 
-    console.log(category);
-
-    const { picture, name, experience, total_recipe, likes, recipe, cooking_method } = category;
+    const { _id, picture, name, experience, total_recipe, likes, recipe, cooking_method } = category;
 
     return (
         <Container>
@@ -24,7 +23,7 @@ const ChefCards = ({ category }) => {
                         <Card.Body>
                             <Card.Link href="#">Card Link</Card.Link>
                             <Card.Link href="#">Another Link</Card.Link>
-
+                            <Link to={`/chefRecipe/${_id}`}><button>View Recipe</button></Link>
                         </Card.Body>
                     </Card>
                 </Col>

@@ -3,11 +3,26 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../shared/header/Header';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import app from '../../../firebase/firebase.config';
 
 const Login = () => {
 
+    const auth = getAuth(app);
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
 
     const handleLogIn = event => {
         event.preventDefault();
@@ -61,6 +76,7 @@ const Login = () => {
 
                     </Form.Text>
                 </Form>
+               <Button onClick={handleGoogleSignIn} variant="primary" >Sign in with google</Button>
             </Container>
         </>
     );

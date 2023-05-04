@@ -24,8 +24,6 @@ const ChefCards = ({ category }) => {
                             <ListGroup.Item>Likes: {likes}</ListGroup.Item>
                         </ListGroup>
                         <Card.Body>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
                             <Link to={`/chefRecipe/${_id}`}><button>View Recipe</button></Link>
                         </Card.Body>
                     </Card>

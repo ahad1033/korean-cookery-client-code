@@ -20,6 +20,7 @@ const ChefRecipePage = () => {
 
             {
                 recipe.recipe.map(r => <RecipeDetails
+                    className='d-flex'
                     key={r.recipe_id}
                     recipe={recipe}
                 ></RecipeDetails>)

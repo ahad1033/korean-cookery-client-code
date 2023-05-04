@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../../shared/header/Header';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
 
     const handleRegister = event => {
         event.preventDefault();
@@ -16,15 +17,22 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        setError('');
+        if (password.length < 6) {
+            setError('password must be 6 characters or longer')
+            return
+        }
+
         console.log(name, photo, email, password)
         createUser(email, password)
-        .then(result => {
-            const createUser = result.user;
-            console.log(createUser);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(result => {
+                const createUser = result.user;
+                console.log(createUser);
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message);
+            })
     }
 
     return (
@@ -61,11 +69,9 @@ const Register = () => {
                     <Form.Text className="text-secondary">
                         Already Have an Account? <Link to="/login">Login</Link>
                     </Form.Text>
-                    <Form.Text className="text-success">
-
-                    </Form.Text>
+                    
                     <Form.Text className="text-danger">
-
+                        <p>{error}</p>
                     </Form.Text>
                 </Form>
             </Container>

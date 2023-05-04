@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand  href="/">Korean Cookery</Navbar.Brand>
+                <Navbar.Brand className='fs-3 fw-bold text-primary' href="/">Korean Cookery</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto align-items-center">

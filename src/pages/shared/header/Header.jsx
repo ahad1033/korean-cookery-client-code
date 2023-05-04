@@ -11,7 +11,7 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto align-items-center">
                     <Link className='mx-2' to="blogs"><button variant="outline-primary">Blogs</button></Link>
-                        <Button variant="primary">Login</Button>
+                        <Link to="/login"><Button variant="primary">Login</Button></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

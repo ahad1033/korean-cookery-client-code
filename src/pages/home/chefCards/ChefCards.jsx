@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 
 const ChefCards = ({ category }) => {
@@ -11,7 +12,9 @@ const ChefCards = ({ category }) => {
             <Row lg={2}>
                 <Col lg={4} sm={12}>
                     <Card className="m-5" style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={picture} />
+                        <LazyLoadImage src={picture}
+                            alt="Image Alt"
+                        />
                         <Card.Body>
                             <Card.Title>{name}</Card.Title>
                         </Card.Body>

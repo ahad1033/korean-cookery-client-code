@@ -14,8 +14,7 @@ const ChefRecipePage = () => {
     return (
         <div>
             <Header />
-
-            <h1>total recipe: {recipe.recipe.length}</h1>
+            <h1>Total recipe: {recipe.recipe.length}</h1>
             
 
             {

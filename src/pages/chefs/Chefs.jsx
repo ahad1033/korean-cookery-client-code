@@ -7,8 +7,8 @@ const Chefs = () => {
     const chefCategories = useLoaderData();
 
     return (
-        <div>
-            <h2>{chefCategories.length}</h2>
+        <div className=' mt-2'>
+            <h1 className='fw-bold text-center text-info'>Here is our chef</h1>
             {
                 chefCategories.map(category => <ChefCards
                     key={category._id}

@@ -8,7 +8,6 @@ const RecipeDetails = ({ recipe }) => {
 
     return (
         <div className='row w-75 justify-content-center align-items-center gap-5'>
-
             <Card className='col m-2 container justify-content-center' style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={recipe.recipe[0]?.recipe_img} />
                 <Card.Body>

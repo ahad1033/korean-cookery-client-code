@@ -17,14 +17,14 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Chefs />,
-                loader: () => fetch('http://localhost:5000/categories')
+                loader: () => fetch('https://korean-cookery-server-ahad1033.vercel.app/categories')
             }
         ]
     },
     {
         path: '/chefRecipe/:id',
         element: <PrivateRoute><ChefRecipePage /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`),
+        loader: ({ params }) => fetch(`https://korean-cookery-server-ahad1033.vercel.app/categories/${params.id}`),
         children: [
             
         ]

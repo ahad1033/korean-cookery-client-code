@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import { Button, Card, Toast } from 'react-bootstrap';
 
 const RecipeDetails = ({ recipe }) => {
-
-    console.log(recipe.recipe[0].recipe_img
-    );
-
     const [showToast, setShowToast] = useState(false);
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
@@ -21,14 +17,19 @@ const RecipeDetails = ({ recipe }) => {
     return (
         <div className='row w-75 justify-content-center align-items-center gap-5'>
             <Card className='col m-2 container justify-content-center' style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={recipe.recipe[0]?.recipe_img} />
+                <Card.Img variant="top" src={recipe.recipe_img} />
                 <Card.Body>
-                    <Card.Title>{recipe.recipe[0]?.recipe_name}</Card.Title>
-                    <Card.Text><span className='fw-bold'>Cooking method:</span> {recipe.recipe[0]?.cooking_method}
+                    <Card.Title className='fs-1'>{recipe.recipe_name}</Card.Title>
+                    <Card.Text>
+                        <span className='fw-bold'>Cooking method:</span> {recipe.cooking_method}
                     </Card.Text>
-                    <Card.Text> <span className='fw-bold'>Ingredients: </span>{recipe.recipe[0]?.ingredients}
+                    <Card.Text>
+                        <span className='fw-bold'>Ingredients: </span>
+                        {recipe.ingredients}
                     </Card.Text>
-                    <Card.Text> <span className='fw-bold'>Ratings: </span>{recipe.recipe[0]?.ratings}
+                    <Card.Text>
+                        <span className='fw-bold'>Ratings: </span>
+                        {recipe.ratings}
                     </Card.Text>
                     <div>
                         <Button variant="primary" onClick={handleClick} disabled={isButtonDisabled}>
